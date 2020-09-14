@@ -1,7 +1,4 @@
 {% load static %}
-{% for x in home_model %}
-{% for y in about_model %}
-{% for my_skill in skill %}
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
@@ -1374,6 +1371,7 @@ height: 25px;
                            <span> {{y.dsc2}} </span>
                            <span> {{y.dsc3}} </span>
                            <span> {{y.dsc4}} </span>
+                           <span> {{y.dsc5}} </span>
                         <br>	   
                     </p>
                     <p style="font-size: larges; color:white;"> {{y.phoneNum }}</p>
@@ -1829,6 +1827,3 @@ height: 25px;
    <script src="{%static 'MyWeb\js/init.js' %}"></script>
 </body>
 </html>
-{% endfor %}
-{% endfor %}
-{% endfor %}

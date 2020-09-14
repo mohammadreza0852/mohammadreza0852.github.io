@@ -1,10 +1,18 @@
 from django.shortcuts import render
 from MyWeb.models import HomePage, AboutMe, Abilities
+from django.http import HttpResponse
 
 # Create your views here.
-
 def home(request):
-    home_model = HomePage.objects.all()
-    about_model = AboutMe.objects.all()
-    skills = Abilities.objects.all()
-    return render(request, 'MyWeb/index.html', {'home_model': home_model, 'about_model': about_model, 'skill': skills})
+    return render(request, 'MyWeb/home.html')
+
+
+def index(request):
+    home_model = HomePage.objects.get(name=request.GET['input_text'])
+    about_model = AboutMe.objects.get(name=request.GET['input_text'])
+    skills = Abilities.objects.get(name=request.GET['input_text'])
+    return render(request, 'MyWeb/index.html', {'x': home_model, 'y': about_model, 'my_skill': skills})
+
+
+def showID(request):
+    return HttpResponse(f"this is post id number ")

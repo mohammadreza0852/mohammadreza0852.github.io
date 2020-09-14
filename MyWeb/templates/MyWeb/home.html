@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'MyWeb\css\button.css' %}">
+</head>
+
+<style>
+    .text_box{
+        background-color: black;
+        color: white;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+    }
+
+    .name_label{
+        color: white;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+    }
+
+    .main_background{
+        background-image: url("{% static 'MyWeb\images\portfolio\console.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+<body class="main_background">
+    <form action="{% url 'showPage' %}">
+        <label for="" class="name_label">Name :</label>
+        <input type="text", name='input_text' class="text_box">
+        <button type="submit" class="button"><span>Get Page</span></button>
+    
+    </form>
+</body>
+</html>
